@@ -5,21 +5,22 @@ body {
     padding: 0;
 }
 
-#menu {
+.navbar {
     background-color: #b5b5b5;
     color: white;
     padding: 10px;
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-between;}
+    justify-content: space-between;
+}
 
-#menu > img.logo {
+.navbar>.logo {
     height: 85%;
     border-radius: 100px;
 }
 
-#menu > div {
+#menu>ul {
     width: 50%;
     display: flex;
     justify-content: space-between;
@@ -27,13 +28,25 @@ body {
     gap: 20px;
 }
 
-#menu > div > a {
-    /* color: black; */
-    text-decoration: none;
-    text-transform: uppercase;
+#menu>ul>li {
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
 
-.menu > a {
+#menu>ul>li>a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    &:hover {
+        font-weight: bold;
+        color: darkgreen;
+    }
+}
+
+.menu>a {
     color: #ff0000;
 }
 
@@ -41,23 +54,57 @@ main {
     width: 100%;
 }
 
-main > article {
+main>article {
     width: 90%;
     display: flex;
     gap: 20px;
 }
 
-main > article > img {
+main>article>img {
     margin: 10px;
     border-radius: 50px;
     width: 40%;
     height: auto;
 }
 
-main > article > p {
+main>article>p {
     width: 60%;
     margin: 10px;
     padding: 20px;
     text-indent: 20px;
     text-align: justify;
+}
+
+.footer-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.secondary-page {
+    background-image: url('bugatti.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.secondary-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
 }

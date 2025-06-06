@@ -61,3 +61,49 @@ Este proyecto es un sitio web responsive que consta de dos páginas principales.
 - Archivos base: Creación de archivos HTML, CSS y JavaScript
 - Recursos: Incorporación de imágenes (logo.jpg, bugatti.webp, descarga.jpeg)
 - Diseño: Implementación de estilos responsive y efectos visuales
+
+### 06 de junio de 2025
+
+#### Mejoras Generales
+
+- Implementación de carga dinámica de estilos
+- Optimización de la carga de recursos
+- Mejora en la gestión de estilos condicionales
+
+#### Cambios por Archivo
+
+##### index.html
+
+- Eliminadas referencias directas a Tailwind y style.css del head
+- Limpieza del código HTML removiendo artículos hardcodeados
+- Mejorada la estructura del contenedor de artículos
+
+##### main.js
+
+- Nueva función `loadStyles()` para carga dinámica de estilos
+- Implementada función `handlePepitoStyle()` para manejar estilos condicionales
+- Nueva función `setPageTitle()` para manejo dinámico del título
+- Mejorada la carga de artículos desde articles.json con mejor manejo de errores
+- Optimizada la generación de artículos con alternancia izquierda/derecha
+
+##### secondary.html
+
+- Eliminadas referencias directas a Tailwind y style.css
+- Limpieza y optimización del código
+- Mejorada la integración con la navegación principal
+
+##### style.css
+
+- Separación de estilos de pepito para mejor manejo condicional
+- Optimización de estilos del background para pantalla completa
+- Nueva clase `homepage-pepito` para estilos específicos de la página principal
+- Mejoras en el diseño responsive de la navegación
+- Optimización de transiciones y efectos hover
+
+#### Características Principales
+
+- Carga dinámica de estilos
+- Manejo condicional de estilos según la página
+- Sistema de navegación mejorado
+- Diseño responsive y optimizado
+- Carga eficiente de artículos desde JSON

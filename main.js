@@ -39,68 +39,65 @@ function generateNavbar() {
     // document.body.appendChild(navbar);
 }
 
-// Call the function to generate the navbar
-generateNavbar();
-
-
 function articleItem(srcImage, altImage, description, direction = 'left') {
     if (!srcImage || !altImage || !description) {
         console.error('Missing required article properties');
         return '';
     }
 
-    return `<article>
-                <img src="${srcImage}" alt="${altImage}" />
-                <p>
-                    ${description}
-                </p>
-            </article>
-        `
+    return direction === 'left' ?
+        `<article>
+            <img src="${srcImage}" alt="${altImage}" />
+            <p>
+                ${description}
+            </p>
+        </article>` :
+        `<article>
+            <p>
+                ${description}
+            </p>
+            <img src="${srcImage}" alt="${altImage}" />
+        </article>`
 }
 
-function generateArticles() {
-    const articles = [
-        {
-            srcImage: 'bugatti.webp',
-            altImage: 'Bugatti Chiron',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro soluta delectus error ' +
-                'placeat ' +
-                'blanditiis, eaque consectetur libero corrupti reprehenderit totam consequatur quod facilis fugiat ' +
-                'distinctio eligendi ut laborum maxime dolores, nemo velit modi nostrum. Est iste architecto ' +
-                'exercitationem. Sint accusamus maxime ratione et, reiciendis quas vero nulla labore porro beatae ' +
-                'architecto ipsa, cum placeat? Maiores at iste praesentium. Voluptates inventore nostrum ' +
-                'exercitationem, ' +
-                'possimus doloribus ratione fuga sapiente dolores illum similique recusandae eius. Aliquam quis ' +
-                'tempora ' +
-                'laudantium ex quae voluptate sunt tenetur culpa non, numquam corrupti adipisci, recusandae soluta enim, ' +
-                'distinctio possimus porro quam? Iste quisquam autem, esse possimus repellat, ducimus officia aliquis '
-        },
-        {
-            srcImage: 'descarga.jpeg',
-            altImage: 'Mustang',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro soluta delectus error ' +
-                'placeat ' +
-                'blanditiis, eaque consectetur libero corrupti reprehenderit totam consequatur quod facilis fugiat ' +
-                'distinctio eligendi ut laborum maxime dolores, nemo velit modi nostrum. Est iste architecto ' +
-                'exercitationem. Sint accusamus maxime ratione et, reiciendis quas vero nulla labore porro beatae ' +
-                'architecto ipsa, cum placeat? Maiores at iste praesentium. Voluptates inventore nostrum ' +
-                'exercitationem, ' +
-                'possimus doloribus ratione fuga sapiente dolores illum similique recusandae eius. Aliquam quis ' +
-                'tempora ' +
-                'laudantium ex quae voluptate sunt tenetur culpa non, numquam corrupti adipisci, recusandae soluta enim, ' +
-                'distinctio possimus porro quam? Iste quisquam autem, esse possimus repellat, ducimus officia aliquis '
+async function generateArticles() {
+    try {
+        console.log('Intentando cargar articles.json...');
+        const response = await fetch('articles.json');
+        console.log('Response recibida:', response);
+        const data = await response.json();
+        console.log('Datos cargados:', data);
+        const articles = data.articles;
+        
+        const articlesContainer = document.getElementById('articles');
+        if (!articlesContainer) {
+            console.error('Articles container not found');
+            return;
         }
-    ];
-    const articlesContainer = document.getElementById('articles');
-    if (!articlesContainer) {
-        console.error('Articles container not found');
-        return;
-    }
 
-    articles.forEach(article => {
-        const articleHTML = articleItem(article.srcImage, article.altImage, article.description);
-        articlesContainer.innerHTML += articleHTML;
-    });
+        // Limpiar el contenedor antes de agregar los nuevos artículos
+        articlesContainer.innerHTML = '';
+        
+        articles.forEach((article, index) => {
+            const direction = index % 2 === 0 ? 'left' : 'right';
+            const articleHTML = articleItem(article.srcImage, article.altImage, article.description, direction);
+            articlesContainer.innerHTML += articleHTML;
+        });
+        
+        console.log('Articles loaded:', articles.length); // Para debugging
+    } catch (error) {
+        console.error('Error loading articles:', error);
+    }
 }
 
-generateArticles();
+// Funcion que le cambia el título de la página
+function setPageTitle(title) {
+    document.title = title;
+}
+
+// Como ahora generateArticles es asíncrona, necesitamos llamarla así:
+document.addEventListener('DOMContentLoaded', () => {
+    setPageTitle('Mi Página de Coches');
+    generateNavbar();
+    generateArticles();
+});

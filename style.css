@@ -125,11 +125,15 @@ pepito {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .secondary-page::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;

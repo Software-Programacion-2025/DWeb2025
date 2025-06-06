@@ -1,0 +1,24 @@
+{
+    "articles": [
+        {
+            "srcImage": "cars1.jpeg",
+            "altImage": "Sport Car 2",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro soluta delectus error placeat blanditiis, eaque consectetur libero corrupti reprehenderit totam consequatur quod facilis fugiat distinctio eligendi ut laborum maxime dolores, nemo velit modi nostrum. Est iste architecto exercitationem. Sint accusamus maxime ratione et, reiciendis quas vero nulla labore porro beatae architecto ipsa, cum placeat? Maiores at iste praesentium. Voluptates inventore nostrum exercitationem, possimus doloribus ratione fuga sapiente dolores illum similique recusandae eius. Aliquam quis tempora laudantium ex quae voluptate sunt tenetur culpa non, numquam corrupti adipisci, recusandae soluta enim, distinctio possimus porro quam? Iste quisquam autem, esse possimus repellat, ducimus officia aliquid."
+        },
+        {
+            "srcImage": "cars2.jpeg",
+            "altImage": "Sport Car 2",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro soluta delectus error placeat blanditiis, eaque consectetur libero corrupti reprehenderit totam consequatur quod facilis fugiat distinctio eligendi ut laborum maxime dolores, nemo velit modi nostrum. Est iste architecto exercitationem. Sint accusamus maxime ratione et, reiciendis quas vero nulla labore porro beatae architecto ipsa, cum placeat? Maiores at iste praesentium. Voluptates inventore nostrum exercitationem, possimus doloribus ratione fuga sapiente dolores illum similique recusandae eius. Aliquam quis tempora laudantium ex quae voluptate sunt tenetur culpa non, numquam corrupti adipisci, recusandae soluta enim, distinctio possimus porro quam? Iste quisquam autem, esse possimus repellat, ducimus officia aliquid."
+        },
+        {
+            "srcImage": "cars3.jpeg",
+            "altImage": "Sport Car 3",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro soluta delectus error placeat blanditiis, eaque consectetur libero corrupti reprehenderit totam consequatur quod facilis fugiat distinctio eligendi ut laborum maxime dolores, nemo velit modi nostrum. Est iste architecto exercitationem. Sint accusamus maxime ratione et, reiciendis quas vero nulla labore porro beatae architecto ipsa, cum placeat? Maiores at iste praesentium. Voluptates inventore nostrum exercitationem, possimus doloribus ratione fuga sapiente dolores illum similique recusandae eius. Aliquam quis tempora laudantium ex quae voluptate sunt tenetur culpa non, numquam corrupti adipisci, recusandae soluta enim, distinctio possimus porro quam? Iste quisquam autem, esse possimus repellat, ducimus officia aliquid."
+        },
+        {
+            "srcImage": "cars4.jpeg",
+            "altImage": "Sport Car 4",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro soluta delectus error placeat blanditiis, eaque consectetur libero corrupti reprehenderit totam consequatur quod facilis fugiat distinctio eligendi ut laborum maxime dolores, nemo velit modi nostrum. Est iste architecto exercitationem. Sint accusamus maxime ratione et, reiciendis quas vero nulla labore porro beatae architecto ipsa, cum placeat? Maiores at iste praesentium. Voluptates inventore nostrum exercitationem, possimus doloribus ratione fuga sapiente dolores illum similique recusandae eius. Aliquam quis tempora laudantium ex quae voluptate sunt tenetur culpa non, numquam corrupti adipisci, recusandae soluta enim, distinctio possimus porro quam? Iste quisquam autem, esse possimus repellat, ducimus officia aliquid."
+        }
+    ]
+}

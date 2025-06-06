@@ -3,7 +3,8 @@ const navItems = [
     { id: 1, name: 'Home', url: '/' },
     { id: 2, name: 'About', url: '/about' },
     { id: 3, name: 'Services', url: '/services' },
-    { id: 4, name: 'Contact', url: '/contact' }
+    { id: 4, name: 'Contact', url: '/contact' },
+    { id: 4, name: 'Secondary Page', url: '/secondary.html' }
 ];
 
 function generateNavbar() {
@@ -95,8 +96,38 @@ function setPageTitle(title) {
     document.title = title;
 }
 
+// Función para cargar los estilos dinámicamente
+function loadStyles() {
+    // Cargar Tailwind
+    const tailwindScript = document.createElement('script');
+    tailwindScript.src = 'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4';
+    document.head.appendChild(tailwindScript);
+
+    // Cargar CSS personalizado
+    const customStyles = document.createElement('link');
+    customStyles.rel = 'stylesheet';
+    customStyles.href = './style.css';
+    document.head.appendChild(customStyles);
+}
+
+// Función para aplicar estilo a pepito solo en index.html
+function handlePepitoStyle() {
+    // Verifica si estamos en index.html o en la raíz
+    const isHomePage = window.location.pathname.endsWith('index.html') || 
+                      window.location.pathname.endsWith('/');
+    
+    if (isHomePage) {
+        const pepitoElements = document.getElementsByTagName('pepito');
+        Array.from(pepitoElements).forEach(element => {
+            element.classList.add('homepage-pepito');
+        });
+    }
+}
+
 // Como ahora generateArticles es asíncrona, necesitamos llamarla así:
 document.addEventListener('DOMContentLoaded', () => {
+    loadStyles();
+    handlePepitoStyle();
     setPageTitle('Mi Página de Coches');
     generateNavbar();
     generateArticles();

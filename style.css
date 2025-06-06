@@ -94,8 +94,11 @@ main>section>article>p {
 }
 
 pepito {
-    color: red !important;
     font-style: italic;
+}
+
+.homepage-pepito {
+    color: red !important;
 }
 
 .sizeletter {

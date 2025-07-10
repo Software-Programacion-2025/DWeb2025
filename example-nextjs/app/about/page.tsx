@@ -1,4 +1,4 @@
-import MyTitle from "@/Componets/MyTitle";
+import MyTitle from "@/Components/MyTitle";
 
 export default function About() {
     return (

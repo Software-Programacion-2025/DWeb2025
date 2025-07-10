@@ -107,3 +107,40 @@ Este proyecto es un sitio web responsive que consta de dos páginas principales.
 - Sistema de navegación mejorado
 - Diseño responsive y optimizado
 - Carga eficiente de artículos desde JSON
+
+### 03 de julio de 2025
+
+#### Mejoras Generales
+
+- Integración de sistema de preguntas y respuestas
+- Mejora en la presentación visual de artículos
+- Optimización del rendimiento general
+- Implementación de proyecto Next.js como ejemplo adicional
+
+#### Cambios por Archivo
+
+##### questions.md
+
+- Creación del archivo de preguntas para el sistema de FAQ
+- Implementación de estructura de preguntas organizadas por categorías
+- Formato optimizado para fácil mantenimiento
+
+##### responses.md
+
+- Creación del archivo de respuestas correspondientes a las preguntas
+- Integración con el sistema de preguntas mediante identificadores únicos
+- Inclusión de ejemplos y casos de uso para cada respuesta
+
+##### articles.json
+
+- Actualización del esquema de datos para mejorar la estructura de contenidos
+- Adición de nuevos artículos con imágenes optimizadas
+- Implementación de metadatos para mejor SEO
+
+##### example-nextjs/
+
+- Creación de proyecto Next.js como ejemplo de aplicación moderna
+- Implementación de estructura básica con TypeScript
+- Desarrollo de componentes reutilizables
+- Configuración de rutas y páginas (home, about)
+- Inclusión de recursos estáticos en carpeta public

@@ -1,13 +1,28 @@
+'use client';
+
 import Counter from "@/Components/Counter";
 import MyTitle from "@/Components/MyTitle";
+import Button from "@/Components/Button";
+
+import { APP_NAME, APP_VERSION, APP_DEV_COMPANY } from "@/Types/env";
 import Image from "next/image";
 
+import { useAppData } from '@/Context/AppDataContext'
+
 export default function Home() {
+
+  const { sharedValue } = useAppData();
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <div className="flex flex-col gap-[32px] row-start-1 items-center sm:items-start">
-        <MyTitle />
+      <div className="flex flex-col gap-[32px] items-center sm:items-start">
+        <input className="font-bold" value={APP_NAME} readOnly />
+        <div className="flex items-center justify-center gap-3">
+          <Button label="About" url="/about" variant="primary" />
+          <Button label="Control" url="/control" variant="secondary" />
+        </div>
       </div>
+      <MyTitle />
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -65,6 +80,9 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
+        <div className="m-8">
+          <h1 className="text-2xl font-bold">{sharedValue}</h1>
+        </div>
       </footer>
     </div>
   );

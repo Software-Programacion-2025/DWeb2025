@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { AppDataProvider } from "@/Context/AppDataContext";
-import Whatsapp from "@/Components/Whatsapp/Whatsapp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,15 +24,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppDataProvider>
+          <div>
+            Root Layout
+          </div>
           {children}
-          <Whatsapp phoneNumber="5492314613205" positionX="30px" positionY="30px" />
-          <Whatsapp phoneNumber="5492314613205" positionX="30px" positionY="120px" />
         </AppDataProvider>
       </body>
     </html>

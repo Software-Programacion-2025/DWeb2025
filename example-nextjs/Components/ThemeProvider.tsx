@@ -1,6 +1,6 @@
 'use client'
 import { useAppData } from "@/Context/AppDataContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * COMPONENTE ThemeProvider
@@ -9,9 +9,16 @@ import { useEffect } from "react";
  */
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
     const { theme } = useAppData();
+    const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-        // Aplicar la clase del tema al elemento HTML
+        setIsClient(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isClient) return;
+        
+        // Aplicar la clase del tema al elemento HTML solo en el cliente
         const htmlElement = document.documentElement;
         
         if (theme === 'dark') {
@@ -21,7 +28,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
             htmlElement.classList.remove('dark');
             console.info('☀️ [THEME] Tema claro aplicado al HTML');
         }
-    }, [theme]);
+    }, [theme, isClient]);
 
     return <>{children}</>;
 }

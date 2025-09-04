@@ -44,7 +44,7 @@ export const useAppData = () => {
 
 export const AppDataProvider = ({ children }: { children: ReactNode }) => {
   // Usar el hook personalizado para el tema
-  const { theme, setTheme, isHydrated } = useTheme();
+  const { theme, setTheme } = useTheme();
   
   // Estados principales (sin tema, ya lo maneja el hook)
   const [sharedValue, setSharedValue] = useState<string>("Usuario Demo");
@@ -63,28 +63,6 @@ export const AppDataProvider = ({ children }: { children: ReactNode }) => {
   const decrementGlobalCounter = () => setGlobalCounter(prev => prev - 1);
 
   console.info('🔄 [CONTEXT] AppDataProvider renderizado - Estados actualizados');
-
-  // No renderizar children hasta que esté hidratado para evitar mismatch
-  if (!isHydrated) {
-    return (
-      <AppDataContext.Provider value={{ 
-        sharedValue, 
-        setSharedValue,
-        theme: 'light', // Valor por defecto durante hidratación
-        setTheme: () => {},
-        userPreferences,
-        setUserPreferences,
-        globalCounter,
-        setGlobalCounter,
-        incrementGlobalCounter,
-        decrementGlobalCounter,
-        isOnline,
-        setIsOnline
-      }}>
-        {children}
-      </AppDataContext.Provider>
-    );
-  }
 
   return (
     <AppDataContext.Provider value={{ 

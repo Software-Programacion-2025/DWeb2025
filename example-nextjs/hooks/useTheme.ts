@@ -16,6 +16,8 @@ export function useTheme() {
       if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
         setThemeState(savedTheme);
         console.info(`🎨 [HOOK] Tema restaurado desde localStorage: ${savedTheme}`);
+      } else {
+        console.info(`🎨 [HOOK] No hay tema guardado, usando tema por defecto: light`);
       }
       setIsHydrated(true);
     }

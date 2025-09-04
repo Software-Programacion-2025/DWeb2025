@@ -12,12 +12,12 @@ export default async function UserPage({ params }: { params: Promise<{ id: strin
 
   return (
     <div className="max-w-2xl mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-6">👤 Perfil de Usuario</h1>
+      <h1 className="text-3xl font-bold mb-6 text-foreground">👤 Perfil de Usuario</h1>
       
-      <div className="bg-white shadow-lg rounded-lg p-6">
-        <div className="border-b border-gray-200 pb-4 mb-4">
-          <h2 className="text-2xl font-semibold">Usuario ID: {id}</h2>
-          <p className="text-gray-600">Información del usuario dinámico</p>
+      <div className="bg-card text-card-foreground shadow-lg rounded-lg p-6">
+        <div className="border-b border-border pb-4 mb-4">
+          <h2 className="text-2xl font-semibold text-card-foreground">Usuario ID: {id}</h2>
+          <p className="text-muted-foreground">Información del usuario dinámico</p>
         </div>
         
         <div className="space-y-4">
@@ -43,7 +43,7 @@ export default async function UserPage({ params }: { params: Promise<{ id: strin
           </div>
         </div>
         
-        <div className="mt-6 p-4 border-l-4 bg-destructive text-destructive-foreground border-card">
+        <div className="mt-6 p-4 border-l-4 bg-warning text-warning-foreground border-warning-foreground">
           <p>
             <strong>💡 Tip:</strong> Cambia el ID en la URL para ver cómo la página se adapta dinámicamente.
             Ejemplos: /users/1, /users/admin, /users/test

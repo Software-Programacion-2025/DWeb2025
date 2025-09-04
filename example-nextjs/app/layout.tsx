@@ -3,6 +3,15 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { AppDataProvider } from "@/Context/AppDataContext";
+import ThemeProvider from "@/Components/ThemeProvider";
+import ClientOnly from "@/Components/ClientOnly";
+
+/**
+ * LAYOUT PRINCIPAL (layout.tsx)
+ * Este es el layout raíz que envuelve toda la aplicación
+ * Se ejecuta en cada página y define la estructura HTML básica
+ * Es el lugar ideal para proveedores de contexto globales
+ */
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,18 +33,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
+  // Console.info para rastrear la carga del layout principal
+  console.info('🎨 [LAYOUT] Inicializando Layout Principal - Aplica a todas las rutas');
 
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('app-theme');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppDataProvider>
-          <div>
-            Root Layout
-          </div>
-          {children}
+          <ThemeProvider>
+            <ClientOnly>
+              {children}
+            </ClientOnly>
+          </ThemeProvider>
         </AppDataProvider>
       </body>
     </html>

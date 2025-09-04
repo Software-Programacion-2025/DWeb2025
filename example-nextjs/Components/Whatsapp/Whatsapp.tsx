@@ -9,7 +9,7 @@ interface WhatsappProps {
 
 export default function Whatsapp({ phoneNumber, positionX, positionY }: WhatsappProps) {
     return (
-        <Link href={`https://wa.me/${phoneNumber}?`} style={{ bottom: positionY, right: positionX }} className="whatsapp" target="_blank" rel="noopener noreferrer">
+        <Link href={`https://wa.me/${phoneNumber}?`} className="whatsapp fixed" style={{ bottom: positionY, right: positionX }} target="_blank" rel="noopener noreferrer">
             <img
                 src="/whatsapp.png"
                 alt="Whatsapp Turismo Tapalqué"

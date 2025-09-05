@@ -1,4 +1,5 @@
 'use client'
+import Footer from "@/Components/Footer";
 import Whatsapp from "@/Components/Whatsapp/Whatsapp";
 import { usePathname } from "next/navigation";
 
@@ -24,6 +25,7 @@ export default function RootTemplate({ children }: { children: React.ReactNode }
                     <Whatsapp phoneNumber="5492314613205" positionX="30px" positionY="30px" />
                 </>
             )}
+            <Footer />
         </div>
     );
 }

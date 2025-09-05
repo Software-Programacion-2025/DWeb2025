@@ -25,6 +25,9 @@
     --color-access: var(--access);
     --color-access-foreground: var(--access-foreground);
 
+    --color-noselect: var(--noselect);
+    --color-noselect-foreground: var(--noselect-foreground);
+
     --color-print: var(--print);
     --color-print-foreground: var(--print-foreground);
 
@@ -79,7 +82,7 @@
 }
 
 :root {
-    --background: oklch(53.178% 0.20296 27.735);
+    --background: oklch(62.793% 0.25768 29.223);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
@@ -91,6 +94,8 @@
     --secondary-foreground: oklch(0.98 0 0);
     --access: oklch(0.55 0.15 250);
     --access-foreground: oklch(0.98 0 0);
+    --noselect: oklch(45.759% 0.12884 289.886);
+    --noselect-foreground: oklch(0.98 0 0);
     --muted: oklch(0.94 0.01 260);
     --muted-foreground: oklch(0.556 0 0);
     --accent: oklch(0.75 0.08 280);
@@ -137,6 +142,8 @@
     --secondary-foreground: oklch(0.985 0 0);
     --access: oklch(0.65 0.15 200);
     --access-foreground: oklch(0.98 0 0);
+    --noselect: oklch(36.14% 0.23133 272.805);
+    --noselect-foreground: oklch(0.98 0 0);
     --muted: oklch(0.269 0 0);
     --muted-foreground: oklch(0.708 0 0);
     --accent: oklch(0.55 0.08 280);

@@ -4,7 +4,7 @@ import Counter from "@/Components/Counter";
 import MyTitle from "@/Components/MyTitle";
 import ContextUse from "@/Components/ContextUse";
 import Button from "@/Components/Button";
-
+import { FaTruck, FaYoutube, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa"
 import { APP_NAME, APP_VERSION, APP_DEV_COMPANY } from "@/Types/env";
 import Image from "next/image";
 
@@ -27,7 +27,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8">
         {/* Título Principal */}
         <MyTitle />
-        
+
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-secondary">
             {APP_NAME}
@@ -51,7 +51,7 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-3">👥 Gestión</h3>
             <div className="space-y-2">
               <Button label="Admin Panel" url="/admin" variant="amber" />
-              <Button label="Users" url="/users" variant="print" />
+              <Button label="Users" url="/users" variant="noselect" />
             </div>
           </div>
 
@@ -70,7 +70,7 @@ export default function Home() {
           <div className="bg-secondary text-secondary-foreground rounded-lg border p-6 shadow-lg">
             <h3 className="text-2xl font-semibold mb-4">🌐 Global State Counter</h3>
             <div className="mb-3 p-2 rounded text-sm bg-primary text-primary-foreground">
-              <strong>💡 Tip:</strong> Este contador usa el contexto global. Los cambios se sincronizan 
+              <strong>💡 Tip:</strong> Este contador usa el contexto global. Los cambios se sincronizan
               automáticamente con MyTitle y otros componentes que usen el mismo estado.
             </div>
             <Counter />
@@ -117,6 +117,21 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-8 mt-16">
         <div className="container mx-auto px-4">
+          {/* Social Media Links */}
+          <div className="flex flex-wrap justify-center gap-4 py-4">
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+              <FaYoutube className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition" />
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 transition" />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebook className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition" />
+            </a>
+            <a href="https://www.x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <FaTwitter className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-black dark:hover:text-white transition" />
+            </a>
+          </div>
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-4">🚀 Next.js Routing Demo</h3>
             <div className="flex flex-wrap justify-center gap-8 text-sm">

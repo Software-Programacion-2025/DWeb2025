@@ -1,7 +1,7 @@
 interface ButtonProps {
     label: string;
     url: string;
-    variant: "primary" | "secondary" | "access" | "print" | "amber" | "destructive";
+    variant: "primary" | "secondary" | "access" | "print" | "amber" | "destructive" | "noselect";
 }
 
 export default function Button({ label, url, variant }: ButtonProps) {
@@ -26,6 +26,9 @@ export default function Button({ label, url, variant }: ButtonProps) {
             break;
         case "destructive":
             buttonClasses += " bg-destructive text-destructive-foreground border-border hover:bg-destructive/90";
+            break;
+        case "noselect":
+            buttonClasses += " bg-noselect text-noselect-foreground border-border hover:bg-noselect/90";
             break;
         default:
             buttonClasses += " bg-primary text-primary-foreground border-primary hover:bg-primary/90";

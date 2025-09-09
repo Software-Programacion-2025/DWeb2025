@@ -1,4 +1,4 @@
-import { FaTruck, FaYoutube, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa"
+import { FaYoutube, FaInstagram, FaFacebook, FaXTwitter, FaTiktok } from "react-icons/fa6"
 
 export default function Footer() {
     return (
@@ -7,16 +7,19 @@ export default function Footer() {
                 {/* Social Media Links */}
                 <div className="flex flex-wrap justify-center gap-4 py-4">
                     <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
-                        <FaYoutube className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition" />
+                        <FaYoutube className="h-12 w-12 text-gray-800 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition" />
                     </a>
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <FaInstagram className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 transition" />
+                        <FaInstagram className="h-12 w-12 text-gray-800 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 transition" />
                     </a>
                     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <FaFacebook className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition" />
+                        <FaFacebook className="h-12 w-12 text-gray-800 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition" />
                     </a>
                     <a href="https://www.x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-                        <FaTwitter className="h-12 w-12 text-gray-900 dark:text-gray-400 hover:text-black dark:hover:text-white transition" />
+                        <FaXTwitter className="h-12 w-12 text-gray-800 dark:text-gray-400 hover:text-black dark:hover:text-white transition" />
+                    </a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <FaTiktok className="h-12 w-12 text-gray-800 dark:text-gray-400 hover:text-black dark:hover:text-white transition" />
                     </a>
                 </div>
                 <div className="text-center">
